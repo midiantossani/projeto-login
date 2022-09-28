@@ -4,7 +4,7 @@
 até 768px */
 
 /* PALETA:
-LARANJA: rgb(207, 67, 42)
+LARANJA:rgb(172, 56, 36)
 FUNDO BRANCO: #f7f7f7 
 MARROM: brown*/
 
@@ -18,7 +18,7 @@ MARROM: brown*/
 html, body {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(207, 67, 42);
+    background-color: rgb(172, 56, 36);
 }
 
 main {
@@ -30,19 +30,22 @@ main {
 section#login {
     background-color: #f7f7f7;
     width: 250px;
-    height: 550px;
+    height: 510px;
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.438);
 
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     overflow: hidden;
+
+    transform: translate(-50%, -50%);
+    transition: width .5s, height .5s;
+    transition-timing-function: ease;
 }
 
 section#login > div#imagem {
-    background: rgb(207, 67, 42) url(../imagens/pexels-alan-cabello-4955015.jpg);
+    background: rgb(172, 56, 36) url(../imagens/pexels-alan-cabello-4955015.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -60,25 +63,88 @@ section#login > div#formulario {
 div#formulario > h1 {
     color: rgb(4, 165, 4);
     text-align: center;
+    margin-bottom: 10px;
 }
 
-form {
-    padding: 10px;
-    margin-top: 10px;
+div#formulario > p {
+    font-size: 0.8em;
 }
 
 
-form > div > input {
-    padding: 10px;
+form > input[type=submit] {
     display: block;
-    margin: auto;
-    margin-top: 8px;
-    width: 180px;
-    
-    
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(91, 224, 91);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-input:focus {
-    outline: none;
-    border: 2px solid rgb(83, 20, 20);
+form > input[type=submit]:hover {
+    background-color: rgb(45, 161, 45);
 }
+
+form > a.botao {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    background-color: #f7f7f7;
+    border: 1px solid rgb(77, 223, 77);
+    border-radius: 8px;
+    text-decoration: none;
+    color: rgb(45, 161, 45);
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+form > a.botao > i {
+    font-size: 0.9em;
+}
+
+form > a.botao:hover {
+    background-color: rgb(91, 224, 91);
+    color: #f7f7f7;
+}
+
+form > div.campo {
+    background-color: rgb(172, 56, 36);
+    border: 2px solid rgb(172, 56, 36);
+    width: 100%;
+    display: block;
+    height: 40px;
+    border-radius: 8px;
+    margin: 5px 0px;
+}
+
+form label {
+    display: none;
+}
+
+div.campo > i {
+    color: #f7f7f7;
+    font-size: 1.9em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: rgb(188, 245, 188);
+    font-size: 1em;
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    width: calc(100% - 45px);
+    transform: translateY(-10px);
+}
+
+
+div.campo > input:focus-within {
+    background-color: #f7f7f7;
+}
+
